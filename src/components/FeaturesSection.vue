@@ -1,0 +1,66 @@
+<template>
+  <section class="relative w-screen flex py-20 items-center desktop min-h-[800px]">
+    <div class="w-full flex flex-col items-center justify-center px-6 md:px-12 lg:px-24">
+      <p class="text-purple text-5xl font-extrabold mb-10">
+        你是否也曾...
+      </p>
+      <div class="flex items-start justify-center w-full">
+        <img src="/images/features/phone.png" alt="App Preview"
+          class="w-full min-w-[40%] md:min-w-[40%] lg:min-w-[45%] h-auto object-contain ml-2 md:ml-4 lg:ml-6" />
+
+        <div class="flex flex-col space-y-6 text-[#303030] font-bold text-[28px] items-start justify-start mt-6 ml-8 md:mt-8 md:ml-12 lg:mt-12 lg:ml-16 max-w-[40%]">
+          <ul class="flex flex-col space-y-8 list-disc list-inside items-start justify-start custom-bullets"
+            style="color: #4B164C;">
+            <li>一直配不到對盤的人？</li>
+            <li>每段戀情都卡在同樣的問題？</li>
+            <li>不知道怎麼理解對方的情緒與反應？</li>
+            <li>交往後才發現性格不合，浪費時間？</li>
+          </ul>
+          <div class="mt-8 bg-[#FFF0F0] rounded-2xl p-6">
+            <h3 class="font-extrabold text-purple mb-4 text-3xl">我們的解方</h3>
+            <div class="flex items-center justify-between">
+              <img src="/images/features/card.png" alt="App Preview" class="w-32 h-32 object-contain ml-2" />
+              <p class="text-medium text-purple text-2xl ml-6 whitespace-normal">用「八字」＋「MBTI」剖析個性、理解互動模式，幫你找到契合又長久的伴侶關係。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative w-screen flex py-6 items-center mobile">
+    <div class="w-full flex flex-col items-center justify-center px-4">
+      <p class="text-purple text-3xl font-extrabold mb-2 text-center">
+        你是否也曾...
+      </p>
+
+      <ul class="flex flex-col space-y-2 list-disc list-inside items-start justify-start custom-bullets mb-8 text-[#303030] font-bold text-lg"
+        style="color: #4B164C;">
+        <li>一直配不到對盤的人？</li>
+        <li>每段戀情都卡在同樣的問題？</li>
+        <li>不知道怎麼理解對方的情緒與反應？</li>
+        <li>交往後才發現性格不合，浪費時間？</li>
+      </ul>
+
+      <img src="/images/features/phone.png" alt="App Preview"
+        class="w-3/4 max-w-sm h-auto object-contain mb-8" />
+
+      <div class="bg-[#FFF0F0] rounded-2xl p-6 w-full flex flex-col items-center justify-center">
+        <p class="font-extrabold text-purple mb-4 text-2xl text-left w-full">我們的解方</p>
+        <div class="flex items-center justify-center space-y-4 space-x-4">
+          <img src="/images/features/card.png" alt="App Preview" class="w-16 h-16 ml-2 object-contain" />
+          <p class="text-medium text-purple text-lg text-left">用「八字」＋「MBTI」剖析個性、理解互動模式，幫你找到契合又長久的伴侶關係。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup lang="ts"></script>
+
+<style scoped>
+.custom-bullets li::marker {
+  font-size: 36px;
+  margin: auto;
+}
+</style>
