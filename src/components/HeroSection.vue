@@ -5,22 +5,22 @@
       background-position: center;
       background-repeat: no-repeat;
     ">
-    <div class="w-full flex mt-[114px] mb-[164px] items-center justify-center pl-28 pr-24">
-      <div class="flex flex-col items-start justify-start">
-        <p class="text-6xl font-bold mb-6 text-white">
-          讓緣分聽天命 也靠科學
+    <div class="w-full flex mt-[114px] mb-[164px] items-center justify-center pl-4 pr-2 md:pl-12 md:pr-8 lg:pl-28 lg:pr-20">
+      <div class="flex flex-col items-start justify-center flex-grow text-left">
+        <p class="text-6xl font-bold mb-6 text-white whitespace-normal leading-normal">
+          讓緣分聽天命<br class="hidden sm:block xl:hidden"> 也靠科學
         </p>
-        <p class="text-[28px] mb-12 text-white">結合八字命理 給你最契合的靈魂伴侶</p>
-        <div class="flex items-center space-x-4">
-          <custom-button text="立即加入" :width="230" :height="60" :gradientColors="['#FF6AB4', '#FF7DB3', '#FFB1B1']"
+        <p class="text-[28px] lg:mb-12 md:mb-8 mb-6 text-white">結合八字命理 給你最契合的靈魂伴侶</p>
+        <div class="flex items-center lg:space-x-4 space-x-2 md:space-x-2">
+          <custom-button text="立即加入" :width="{ md: 190, lg: 230 }" :height="{ default: 48, md: 52, lg: 60 }" :gradientColors="['#FF6AB4', '#FF7DB3', '#FFB1B1']"
             textColor="#ffffff" fontSize="24px" radius="99px" />
-          <custom-button text="探索進階功能" :width="230" :height="60" :backgroundColor="'transparent'"
+          <custom-button text="探索進階功能" :width="{ md: 190, lg: 230 }" :height="{ default: 48, md: 52, lg: 60 }" :backgroundColor="'transparent'"
             :border="'3px solid #FF87B3'" textColor="white" fontSize="24px"
             radius="99px" />
         </div>
         <p class="text-xl mt-3 text-gray-200 font-normal">支援 iOS / Android 系統</p>
       </div>
-      <img src="/images/hero/phone.png" alt="App Preview" class="w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[664px] h-auto object-contain" />
+      <img src="/images/hero/phone.png" alt="App Preview" class="w-full max-w-[40%] md:max-w-[45%] lg:max-w-[50%] h-auto object-contain" />
     </div>
   </section>
 

@@ -4,6 +4,7 @@
     :class="buttonClasses"
     :disabled="disabled"
     @click="handleClick"
+    class="responsive-button"
   >
     <slot name="prefix" />
     <span v-if="text" :class="{ 'ml-2': hasPrefix, 'mr-2': hasSuffix }">{{ text }}</span>
@@ -16,10 +17,18 @@ import { computed, useSlots } from 'vue'
 
 const slots = useSlots()
 
+interface ResponsiveSize {
+  default?: string | number
+  sm?: string | number
+  md?: string | number
+  lg?: string | number
+  xl?: string | number
+}
+
 interface Props {
   text: string
-  width?: string | number
-  height?: string | number
+  width?: string | number | ResponsiveSize
+  height?: string | number | ResponsiveSize
   backgroundColor?: string
   textColor?: string
   fontSize?: string | number
@@ -44,18 +53,60 @@ const props = withDefaults(defineProps<Props>(), {
   onClick: undefined
 })
 
+// 輔助函數：將數字轉換為 px 字符串
+const formatSize = (size: string | number): string => {
+  return typeof size === 'number' ? `${size}px` : size
+}
+
+// 輔助函數：處理響應式尺寸
+const getResponsiveStyles = (prop: string | number | ResponsiveSize | undefined, cssProperty: string) => {
+  if (!prop) return {}
+
+  // 如果是簡單的字符串或數字
+  if (typeof prop === 'string' || typeof prop === 'number') {
+    return { [cssProperty]: formatSize(prop) }
+  }
+
+  // 如果是響應式對象，設置 default 值（其他斷點通過 CSS 變數處理）
+  const styles: Record<string, string> = {}
+
+  // 設置 CSS 變數用於響應式斷點
+  if (prop.default) {
+    styles[`--${cssProperty}-default`] = formatSize(prop.default)
+  }
+  if (prop.sm) styles[`--${cssProperty}-sm`] = formatSize(prop.sm)
+  if (prop.md) styles[`--${cssProperty}-md`] = formatSize(prop.md)
+  if (prop.lg) styles[`--${cssProperty}-lg`] = formatSize(prop.lg)
+  if (prop.xl) styles[`--${cssProperty}-xl`] = formatSize(prop.xl)
+
+  return styles
+}
+
+// 輔助函數：生成響應式類
+const getResponsiveClasses = (prop: string | number | ResponsiveSize | undefined, prefix: string) => {
+  const classes: string[] = []
+
+  if (!prop || typeof prop === 'string' || typeof prop === 'number') {
+    return classes
+  }
+
+  // 生成響應式類
+  if (prop.sm) classes.push(`sm:${prefix}-[${formatSize(prop.sm)}]`)
+  if (prop.md) classes.push(`md:${prefix}-[${formatSize(prop.md)}]`)
+  if (prop.lg) classes.push(`lg:${prefix}-[${formatSize(prop.lg)}]`)
+  if (prop.xl) classes.push(`xl:${prefix}-[${formatSize(prop.xl)}]`)
+
+  return classes
+}
+
 const buttonStyles = computed(() => {
   const styles: Record<string, string> = {}
 
-  // 寬度
-  if (props.width) {
-    styles.width = typeof props.width === 'number' ? `${props.width}px` : props.width
-  }
+  // 響應式寬度
+  Object.assign(styles, getResponsiveStyles(props.width, 'width'))
 
-  // 高度
-  if (props.height) {
-    styles.height = typeof props.height === 'number' ? `${props.height}px` : props.height
-  }
+  // 響應式高度
+  Object.assign(styles, getResponsiveStyles(props.height, 'height'))
 
   // 圓角
   if (props.radius) {
@@ -93,6 +144,12 @@ const buttonClasses = computed(() => {
     'cursor-pointer'
   ]
 
+  // 添加響應式寬度類
+  classes.push(...getResponsiveClasses(props.width, 'w'))
+
+  // 添加響應式高度類
+  classes.push(...getResponsiveClasses(props.height, 'h'))
+
   if (!props.disabled) {
     classes.push('hover:opacity-80', 'hover:scale-105', 'active:scale-95')
   } else {
@@ -111,3 +168,27 @@ const handleClick = () => {
   }
 }
 </script>
+
+<style scoped>
+.responsive-button {
+  @media (min-width: 640px) {
+    width: var(--width-sm, var(--width-default));
+    height: var(--height-sm, var(--height-default));
+  }
+
+  @media (min-width: 768px) {
+    width: var(--width-md, var(--width-sm, var(--width-default)));
+    height: var(--height-md, var(--height-sm, var(--height-default)));
+  }
+
+  @media (min-width: 1024px) {
+    width: var(--width-lg, var(--width-md, var(--width-sm, var(--width-default))));
+    height: var(--height-lg, var(--height-md, var(--height-sm, var(--height-default))));
+  }
+
+  @media (min-width: 1280px) {
+    width: var(--width-xl, var(--width-lg, var(--width-md, var(--width-sm, var(--width-default)))));
+    height: var(--height-xl, var(--height-lg, var(--height-md, var(--height-sm, var(--height-default)))));
+  }
+}
+</style>

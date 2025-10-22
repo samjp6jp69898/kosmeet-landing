@@ -1,25 +1,25 @@
 <template>
   <section class="relative w-screen flex py-20 items-center desktop min-h-[800px]">
-    <div class="w-full flex flex-col items-center justify-center px-6 md:px-12 lg:px-24">
-      <p class="text-purple text-5xl font-extrabold mb-10">
+    <div class="w-full flex flex-col items-center justify-center px-6 md:px-12 lg:px-18">
+      <p class="text-purple text-5xl font-extrabold lg:mb-10 md:mb-8 mb-6">
         你是否也曾...
       </p>
       <div class="flex items-start justify-center w-full">
         <img src="/images/features/phone.png" alt="App Preview"
-          class="w-full min-w-[40%] md:min-w-[40%] lg:min-w-[45%] h-auto object-contain ml-2 md:ml-4 lg:ml-6" />
+          class="w-full max-w-[35%] md:max-w-[40%] lg:max-w-[45%] h-auto object-contain ml-2 md:ml-4 lg:ml-6" />
 
-        <div class="flex flex-col space-y-6 text-[#303030] font-bold text-[28px] items-start justify-start mt-6 ml-8 md:mt-8 md:ml-12 lg:mt-12 lg:ml-16 max-w-[40%]">
-          <ul class="flex flex-col space-y-8 list-disc list-inside items-start justify-start custom-bullets"
+        <div class="flex flex-col space-y-6 text-[#303030] font-bold text-[28px] items-start justify-start mt-2 ml-8 md:mt-2 md:ml-12 lg:mt-10 lg:ml-16 flex-grow">
+          <ul class="flex flex-col lg:space-y-8 md:space-y-4 space-y-4 list-disc list-inside items-start justify-start custom-bullets"
             style="color: #4B164C;">
             <li>一直配不到對盤的人？</li>
             <li>每段戀情都卡在同樣的問題？</li>
             <li>不知道怎麼理解對方的情緒與反應？</li>
             <li>交往後才發現性格不合，浪費時間？</li>
           </ul>
-          <div class="mt-8 bg-[#FFF0F0] rounded-2xl p-6">
+          <div class="lg:mt-8 mt-4 md:mt-4 bg-[#FFF0F0] rounded-2xl p-6">
             <h3 class="font-extrabold text-purple mb-4 text-3xl">我們的解方</h3>
             <div class="flex items-center justify-between">
-              <img src="/images/features/card.png" alt="App Preview" class="w-32 h-32 object-contain ml-2" />
+              <img src="/images/features/card.png" alt="App Preview" class="lg:w-32 lg:h-32 w-20 h-20 md:w-20 md:h-20  object-contain ml-2" />
               <p class="text-medium text-purple text-2xl ml-6 whitespace-normal">用「八字」＋「MBTI」剖析個性、理解互動模式，幫你找到契合又長久的伴侶關係。</p>
             </div>
           </div>
