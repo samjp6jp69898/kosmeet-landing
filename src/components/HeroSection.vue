@@ -13,9 +13,9 @@
         <p class="text-[28px] mb-12 text-white">結合八字命理 給你最契合的靈魂伴侶</p>
         <div class="flex items-center space-x-4">
           <custom-button text="立即加入" :width="230" :height="60" :gradientColors="['#FF6AB4', '#FF7DB3', '#FFB1B1']"
-            textColor="#ffffff" fontSize="24px" :onClick="handleButtonClick" radius="99px" />
+            textColor="#ffffff" fontSize="24px" radius="99px" />
           <custom-button text="探索進階功能" :width="230" :height="60" :backgroundColor="'transparent'"
-            :border="'3px solid #FF87B3'" textColor="white" fontSize="24px" :onClick="handleButtonClick"
+            :border="'3px solid #FF87B3'" textColor="white" fontSize="24px"
             radius="99px" />
         </div>
         <p class="text-xl mt-3 text-gray-200 font-normal">支援 iOS / Android 系統</p>
@@ -41,9 +41,9 @@
         <p class="text-lg mb-12 text-white">結合八字命理 給你最契合的靈魂伴侶</p>
         <div class="flex items-center justify-center space-x-4 w-full">
           <custom-button text="立即加入" :width="160" :height="60" :gradientColors="['#FF6AB4', '#FF7DB3', '#FFB1B1']"
-            textColor="#ffffff" fontSize="24px" :onClick="handleButtonClick" radius="99px" />
+            textColor="#ffffff" fontSize="24px" radius="99px" />
           <custom-button text="立即加入" :width="160" :height="60" :backgroundColor="'transparent'"
-            :border="'3px solid #FF87B3'" textColor="white" fontSize="24px" :onClick="handleButtonClick"
+            :border="'3px solid #FF87B3'" textColor="white" fontSize="24px"
             radius="99px" />
         </div>
         <p class="text-xl mt-8 text-gray-200 font-normal">支援 iOS / Android 系統</p>
