@@ -31,7 +31,8 @@ interface Props {
   height?: string | number | ResponsiveSize
   backgroundColor?: string
   textColor?: string
-  fontSize?: string | number
+  fontSize?: string | number | ResponsiveSize
+  fontWeight?: string
   border?: string
   radius?: string | number
   gradientColors?: string[]
@@ -46,6 +47,7 @@ const props = withDefaults(defineProps<Props>(), {
   backgroundColor: '#3b82f6',
   textColor: '#ffffff',
   fontSize: '16px',
+  fontWeight: 'normal',
   radius: '20px',
   border: 'none',
   gradientColors: undefined,
@@ -70,14 +72,11 @@ const getResponsiveStyles = (prop: string | number | ResponsiveSize | undefined,
   // 如果是響應式對象，設置 default 值（其他斷點通過 CSS 變數處理）
   const styles: Record<string, string> = {}
 
-  // 設置 CSS 變數用於響應式斷點
-  if (prop.default) {
-    styles[`--${cssProperty}-default`] = formatSize(prop.default)
-  }
   if (prop.sm) styles[`--${cssProperty}-sm`] = formatSize(prop.sm)
   if (prop.md) styles[`--${cssProperty}-md`] = formatSize(prop.md)
   if (prop.lg) styles[`--${cssProperty}-lg`] = formatSize(prop.lg)
   if (prop.xl) styles[`--${cssProperty}-xl`] = formatSize(prop.xl)
+  if (prop.default) styles[`--${cssProperty}-default`] = formatSize(prop.default)
 
   return styles
 }
@@ -123,8 +122,11 @@ const buttonStyles = computed(() => {
   // 文字顏色
   styles.color = props.textColor
 
+  // 文字粗細
+  styles.fontWeight = props.fontWeight
+
   // 文字大小
-  styles.fontSize = typeof props.fontSize === 'number' ? `${props.fontSize}px` : props.fontSize
+  Object.assign(styles, getResponsiveStyles(props.fontSize, 'fontSize'))
 
   // 邊框
   styles.border = props.border
@@ -171,24 +173,34 @@ const handleClick = () => {
 
 <style scoped>
 .responsive-button {
+  @media (min-width: 320px) {
+    width: var(--width-default);
+    height: var(--height-default);
+    font-size: var(--fontSize-default);
+  }
+
   @media (min-width: 640px) {
     width: var(--width-sm, var(--width-default));
     height: var(--height-sm, var(--height-default));
+    font-size: var(--fontSize-sm, var(--fontSize-default));
   }
 
   @media (min-width: 768px) {
     width: var(--width-md, var(--width-sm, var(--width-default)));
     height: var(--height-md, var(--height-sm, var(--height-default)));
+    font-size: var(--fontSize-md, var(--fontSize-sm, var(--fontSize-default)));
   }
 
   @media (min-width: 1024px) {
     width: var(--width-lg, var(--width-md, var(--width-sm, var(--width-default))));
     height: var(--height-lg, var(--height-md, var(--height-sm, var(--height-default))));
+    font-size: var(--fontSize-lg, var(--fontSize-md, var(--fontSize-sm, var(--fontSize-default))));
   }
 
   @media (min-width: 1280px) {
     width: var(--width-xl, var(--width-lg, var(--width-md, var(--width-sm, var(--width-default)))));
     height: var(--height-xl, var(--height-lg, var(--height-md, var(--height-sm, var(--height-default)))));
+    font-size: var(--fontSize-xl, var(--fontSize-lg, var(--fontSize-md, var(--fontSize-sm, var(--fontSize-default)))));
   }
 }
 </style>

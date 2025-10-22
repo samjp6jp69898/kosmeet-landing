@@ -1,7 +1,7 @@
 <template>
   <header
     class="fixed top-0 left-0 right-0 z-20 transition-all duration-300 ease-in-out"
-    :class="{ 'bg-white/95 backdrop-blur-md shadow-lg': isScrolled || isMobileMenuOpen, 'bg-transparent': !isScrolled }"
+    :class="{ 'bg-gradient-to-r from-[#331541] via-[#1f112e] to-[#150f29] backdrop-blur-md shadow-lg': isScrolled || isMobileMenuOpen, 'bg-transparent': !isScrolled }"
   >
     <nav class="w-[90%] mx-auto">
       <div class="flex justify-between items-center w-full" :class="menuPaddingY">
@@ -12,9 +12,9 @@
 
           <!-- Desktop Navigation -->
           <div class="hidden md:flex items-center space-x-8 ml-11 text-secondary text-2xl font-medium">
-            <a href="#" :class="isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-secondary attibute-hover'">產品</a>
-            <a href="#" :class="isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-secondary attibute-hover'">進階功能</a>
-            <a href="#" :class="isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-secondary attibute-hover'">安全</a>
+            <a href="#" class="text-secondary attribute">產品</a>
+            <a href="#" class="text-secondary attribute">進階功能</a>
+            <a href="#" class="text-secondary attribute">安全</a>
           </div>
         </div>
 
@@ -23,12 +23,12 @@
           <custom-button
             text="語言"
             backgroundColor="transparent"
-            :textColor="isScrolled ? '#4b5563' : '#E0E0E0'"
+            textColor="#E0E0E0"
             :fontSize="24"
             class="transition-all duration-300"
           >
             <template #prefix>
-              <svg class="w-8 h-8 transition-colors duration-300" :class="isScrolled ? '#4b5563' : '#E0E0E0'" fill="currentColor" viewBox="0 0 24 24">
+              <svg class="w-8 h-8 transition-colors duration-300 #E0E0E0"  fill="currentColor" viewBox="0 0 24 24">
                 <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/>
               </svg>
             </template>
@@ -40,8 +40,7 @@
         <!-- Mobile Menu Button -->
         <button
           @click="toggleMobileMenu"
-          class="md:hidden p-2 rounded-lg transition-colors duration-300"
-          :class="isScrolled || isMobileMenuOpen ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'"
+          class="md:hidden p-2 rounded-lg transition-colors duration-300 text-white bg-gradient-to-r from-[#331541] via-[#1f112e] to-[#150f29]"
           aria-label="Toggle mobile menu"
         >
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -68,29 +67,50 @@
       <!-- Mobile Menu -->
       <div
         :class="{ 'opacity-100 translate-y-0': isMobileMenuOpen, 'opacity-0 -translate-y-2 pointer-events-none': !isMobileMenuOpen }"
-        class="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg border-t border-gray-200 transition-all duration-300 ease-in-out"
+        class="md:hidden absolute top-full left-0 right-0 bg-gradient-to-r from-[#331541] via-[#1f112e] to-[#150f29] backdrop-blur-md shadow-lg transition-all duration-300 ease-in-out"
       >
         <div class="px-4 py-6 space-y-4">
           <!-- Mobile Navigation Links -->
           <div class="space-y-3 text-secondary flex flex-col">
-            <a href="#" class="block text-gray-700 hover:text-gray-900 text-xl font-medium py-2 transition-colors duration-300">產品</a>
-            <a href="#" class="block text-gray-700 hover:text-gray-900 text-xl font-medium py-2 transition-colors duration-300">進階功能</a>
-            <a href="#" class="block text-gray-700 hover:text-gray-900 text-xl font-medium py-2 transition-colors duration-300">安全</a>
+            <custom-button
+              text="產品"
+              :backgroundColor="'transparent'"
+              textColor="#ffffff"
+              :fontSize="20"
+              :onClick="handleButtonClick"
+              class="mobile-menu-button active:scale-100"
+            />
+            <custom-button
+              text="進階功能"
+              :backgroundColor="'transparent'"
+              textColor="#ffffff"
+              :fontSize="20"
+              :onClick="handleButtonClick"
+              class="mobile-menu-button active:scale-100"
+            />
+            <custom-button
+              text="安全"
+              :backgroundColor="'transparent'"
+              textColor="#ffffff"
+              :fontSize="20"
+              :onClick="handleButtonClick"
+              class="mobile-menu-button active:scale-100"
+            />
             <custom-button
               text="語言"
               backgroundColor="transparent"
-              textColor="#4b5563"
+              textColor="#ffffff"
               :fontSize="20"
-              class="w-full justify-start py-2"
+              class="mobile-menu-button active:scale-100"
             >
             </custom-button>
             <custom-button
               text="下載"
               :backgroundColor="'transparent'"
-              textColor="#4b5563"
+              textColor="#ffffff"
               :fontSize="20"
               :onClick="handleButtonClick"
-              class="w-full justify-start py-2"
+              class="mobile-menu-button active:scale-100"
             />
           </div>
         </div>
@@ -110,7 +130,7 @@ const isScrolled = ref(false);
 const isMobileMenuOpen = ref(false);
 
 const handleScroll = () => {
-  isScrolled.value = window.scrollY > (isMobile.value ? 20 : 100);
+  isScrolled.value = window.scrollY > (isMobile.value ? 10 : 100);
   // Close mobile menu when scrolling
   if (isMobileMenuOpen.value) {
     isMobileMenuOpen.value = false;

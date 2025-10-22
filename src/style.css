@@ -48,8 +48,28 @@ body.is-desktop .desktop {
   display: flex;
 }
 
-.attibute-hover:hover {
+.attribute:hover {
   color: #bdbdbd;
   transform: scale(1.1);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.attribute:active {
+  transform: scale(0.8);
+  transition: all 0.3s ease-in-out;
+}
+
+.mobile-menu-button {
+  width: 100%;
+  justify-content: start;
+  padding: 0.5rem 0;
+}
+
+.mobile-menu-button:active {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  opacity: 0.8;
+  color: rgba(17, 24, 39, 1);
 }
