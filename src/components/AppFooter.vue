@@ -4,7 +4,7 @@
       <div class="grid md:grid-cols-4 gap-8">
         <!-- Logo 區域 -->
         <div>
-          <div class="text-2xl font-bold text-pink-400 mb-4">NAME</div>
+          <div class="text-2xl font-bold text-pink-400 mb-4">{{ AppName }}</div>
           <p class="text-gray-400 text-sm">讓緣分撞天命，科學配對真愛</p>
           <div class="flex space-x-4 mt-4">
             <div class="w-8 h-8 bg-gray-700 rounded-full"></div>
@@ -56,4 +56,6 @@
   </footer>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { AppName } from '../store/constants';
+</script>
