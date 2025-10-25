@@ -28,6 +28,13 @@ jobs:
       - name: Build project
         run: npm run build  # 預設會輸出到 dist 資料夾
 
+      - name: Check build output
+        run: |
+          echo "Checking if dist folder exists..."
+          ls -la
+          echo "Contents of dist folder:"
+          ls -la dist/
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
