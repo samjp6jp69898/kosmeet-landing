@@ -3,11 +3,11 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # 👈 當你 push 到 main 分支時就會自動部署
-  workflow_dispatch: # 👈 也可以手動觸發部署
+      - main 
+  workflow_dispatch: deploy
 
 permissions:
-  contents: write  # 讓 actions 有權限推送 gh-pages branch
+  contents: write
 
 jobs:
   deploy:
@@ -20,24 +20,17 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20  # 你可依自己專案 Node 版本調整
+          node-version: 23
 
       - name: Install dependencies
-        run: npm ci  # 若你用 yarn/pnpm 請改成對應指令
+        run: npm install
 
       - name: Build project
-        run: npm run build  # 預設會輸出到 dist 資料夾
-
-      - name: Check build output
-        run: |
-          echo "Checking if dist folder exists..."
-          ls -la
-          echo "Contents of dist folder:"
-          ls -la dist/
+        run: npm run build 
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: dist
           cname: kosmeet.com
