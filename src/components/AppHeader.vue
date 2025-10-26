@@ -123,12 +123,11 @@
 import { ref, onMounted, onUnmounted, computed } from "vue";
 import CustomButton from "./CustomButton.vue";
 import { AppName } from "../store/constants";
-const isMobile = computed(() => document.body.classList.contains("is-mobile"));
+const isMobile = ref(false);
 const menuPaddingY = computed(() => isMobile.value ? "py-2" : "py-4");
 
 const isScrolled = ref(false);
 const isMobileMenuOpen = ref(false);
-
 const handleScroll = () => {
   isScrolled.value = window.scrollY > (isMobile.value ? 10 : 100);
   // Close mobile menu when scrolling
@@ -142,6 +141,8 @@ const toggleMobileMenu = () => {
 };
 
 const handleResize = () => {
+  // Update mobile status when window resizes
+  isMobile.value = document.body.classList.contains("is-mobile");
   // Close mobile menu when resizing to desktop
   if (window.innerWidth >= 768 && isMobileMenuOpen.value) {
     isMobileMenuOpen.value = false;
@@ -153,6 +154,7 @@ const handleButtonClick = () => {
 };
 
 onMounted(() => {
+  isMobile.value = document.body.classList.contains("is-mobile");
   window.addEventListener("scroll", handleScroll);
   window.addEventListener("resize", handleResize);
 });
