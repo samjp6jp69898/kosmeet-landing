@@ -6,6 +6,7 @@
         :alt="title"
         class="layout-image  lg:h-138 md:h-120 sm:h-92"
         :class="imageClass"
+        loading="lazy"
       />
     </div>
 

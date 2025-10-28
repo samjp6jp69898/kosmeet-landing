@@ -5,7 +5,7 @@
         你是否也曾...
       </p>
       <div class="flex items-start justify-center w-full">
-        <img src="/images/features/phone.png" alt="App Preview"
+        <img src="/images/features/phone.webp" loading="lazy" alt="App Preview"
           class="w-full max-w-[35%] md:max-w-[40%] lg:max-w-[45%] h-auto object-contain ml-2 md:ml-4 lg:ml-6" />
 
         <div
@@ -21,7 +21,7 @@
           <div class="lg:mt-8 mt-4 md:mt-4 bg-[#FFF0F0] rounded-2xl p-6">
             <h3 class="font-extrabold text-purple mb-4 text-3xl">我們的解方</h3>
             <div class="flex items-center justify-between">
-              <img src="/images/features/card.png" alt="App Preview"
+              <img src="/images/features/card.webp" loading="lazy" alt="App Preview"
                 class="lg:w-32 lg:h-32 w-20 h-20 md:w-20 md:h-20  object-contain ml-2" />
               <p class="text-medium text-purple text-2xl ml-6 whitespace-normal">用「八字」＋「MBTI」剖析個性、理解互動模式，幫你找到契合又長久的伴侶關係。
               </p>
@@ -47,12 +47,12 @@
         <li>交往後才發現性格不合，浪費時間？</li>
       </ul>
 
-      <img src="/images/features/phone.png" alt="App Preview" class="w-3/4 max-w-sm h-auto object-contain mb-8" />
+      <img src="/images/features/phone.webp" alt="App Preview" loading="lazy" class="w-3/4 max-w-sm h-auto object-contain mb-8" />
 
       <div class="bg-[#FFF0F0] rounded-2xl p-6 w-full flex flex-col items-center justify-center">
         <p class="font-extrabold text-purple mb-4 text-2xl text-left w-full">我們的解方</p>
         <div class="flex items-center justify-center space-y-4 space-x-4">
-          <img src="/images/features/card.png" alt="App Preview" class="w-16 h-16 ml-2 my-auto object-contain" />
+          <img src="/images/features/card.webp" alt="App Preview" loading="lazy" class="w-16 h-16 ml-2 my-auto object-contain" />
           <p class="text-medium text-purple text-lg text-left">用「八字」＋「MBTI」剖析個性、理解互動模式，幫你找到契合又長久的伴侶關係。</p>
         </div>
       </div>

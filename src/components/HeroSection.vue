@@ -1,6 +1,6 @@
 <template>
   <section class="relative w-screen flex min-h-[1000px] items-center desktop" style="
-      background-image: url(&quot;/images/hero/hero_section_bg.png&quot;);
+      background-image: url('/images/hero/bg.webp');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -20,12 +20,12 @@
         </div>
         <p class="text-xl mt-3 text-gray-200 font-normal">支援 iOS / Android 系統</p>
       </div>
-      <img src="/images/hero/phone.png" alt="App Preview" class="w-full max-w-[40%] md:max-w-[45%] lg:max-w-[50%] h-auto object-contain" />
+      <img src="/images/hero/phone.webp" alt="App Preview" class="w-full max-w-[40%] md:max-w-[45%] lg:max-w-[50%] h-auto object-contain" loading="lazy" />
     </div>
   </section>
 
   <section class="relative w-full flex items-center mobile" style="
-      background-image: url(&quot;/images/hero/hero_section_bg.png&quot;);
+      background-image: url('/images/hero/bg.webp');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -48,11 +48,21 @@
         </div>
         <p class="text-xl mt-8 text-gray-200 font-normal">支援 iOS / Android 系統</p>
       </div>
-      <img src="/images/hero/phone.png" alt="App Preview" class="min-w-[300px] mt-6 h-auto object-contain" />
+      <img src="/images/hero/phone.webp" alt="App Preview" class="min-w-[300px] mt-6 h-auto object-contain" loading="lazy" />
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
 import CustomButton from "./CustomButton.vue";
+import { onMounted } from 'vue';
+
+// Preload critical hero background image
+onMounted(() => {
+  const link = document.createElement('link');
+  link.rel = 'preload';
+  link.href = '/images/hero/bg.webp';
+  link.as = 'image';
+  document.head.appendChild(link);
+});
 </script>

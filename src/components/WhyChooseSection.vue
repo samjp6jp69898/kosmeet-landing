@@ -8,7 +8,7 @@
       </div>
 
       <div class="w-full flex flex-col justify-start items-center overflow-visible relative">
-        <OverlapLayout image="/images/why_choose/phone1.png" title="精準八字排盤系統" subtitle="準確採用傳統干支、五行、十神確保命盤分析精準無誤"
+        <OverlapLayout image="/images/why_choose/phone1.webp" title="精準八字排盤系統" subtitle="準確採用傳統干支、五行、十神確保命盤分析精準無誤"
           image-position="right" layout-class="lg:top-5 md:top-10 sm:top-5"
           image-class="relative lg:left-10 md:left-10 sm:left-15 lg:top-10 md:top-10 sm:top-10 right-4"
           text-class="relative lg:left-10 md:left-5 sm:left-10">
@@ -18,7 +18,7 @@
             確保命盤分析精準無誤
           </template>
         </OverlapLayout>
-        <OverlapLayout image="/images/why_choose/phone2.png" title="智能配對" subtitle="綜合命盤結構與MBTI，找出高契合對象融合命理與心理學"
+        <OverlapLayout image="/images/why_choose/phone2.webp" title="智能配對" subtitle="綜合命盤結構與MBTI，找出高契合對象融合命理與心理學"
           image-position="left" layout-class="lg:top-0 md:top-15"
           image-class="relative lg:right-40 md:right-20 sm:right-20"
           text-class="relative lg:left-30 md:left-30 lg:w-[62%] md:w-[70%] sm:w-[70%] sm:left-25">
@@ -26,7 +26,7 @@
             結合命盤結構與MBTI，找出高契合對象融合命理與心理學
           </template>
         </OverlapLayout>
-        <OverlapLayout image="/images/why_choose/phone3.png" title="戀愛建議提醒" subtitle="" image-position="right"
+        <OverlapLayout image="/images/why_choose/phone3.webp" title="戀愛建議提醒" subtitle="" image-position="right"
           layout-class="lg:top-[-60px] md:top-10" image-class="relative lg:left-15 md:left-20 sm:left-25 left-18"
           text-class="relative lg:left-10 md:left-10 lg:top-[-20px] sm:left-10 top-[-25px]">
           <template #subtitle>
@@ -37,7 +37,7 @@
             減少關係摩擦
           </template>
         </OverlapLayout>
-        <OverlapLayout image="/images/why_choose/phone4.png" title="命格搜尋" subtitle="" image-position="left"
+        <OverlapLayout image="/images/why_choose/phone4.webp" title="命格搜尋" subtitle="" image-position="left"
           layout-class="lg:top-[-140px] md:top-[-40px] top-[-20px]"
           image-class="relative lg:right-40 md:right-20 sm:right-20 sm:h-90"
           text-class="relative lg:left-35 md:left-20 sm:left-20 sm:w-[90%]">

@@ -7,7 +7,7 @@
       <div class="flex justify-between items-center w-full" :class="menuPaddingY">
         <!-- Logo and App Name -->
         <div class="flex items-center space-x-3">
-          <img src="/images/icons/app_icon.png" alt="NAME App Icon" class="w-20 h-20 object-contain" />
+          <img src="/images/icons/app_icon.webp" alt="NAME App Icon" class="w-20 h-20 object-contain" />
           <div class="text-3xl font-bold text-primary">{{ AppName }}</div>
 
           <!-- Desktop Navigation -->
