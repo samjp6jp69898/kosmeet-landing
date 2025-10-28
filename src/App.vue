@@ -2,6 +2,7 @@
 import AppHeader from "./components/AppHeader.vue";
 import HeroSection from "./components/HeroSection.vue";
 import FeaturesSection from "./components/FeaturesSection.vue";
+import WhyChooseSection from "./components/WhyChooseSection.vue";
 import AppFooter from "./components/AppFooter.vue";
 import { useDevice } from "./composables/useDevice";
 
@@ -11,15 +12,15 @@ useDevice();
 
 <template>
   <div class="min-h-screen">
-    <AppHeader /> 
+    <AppHeader />
 
 
 
     <main>
       <HeroSection />
       <FeaturesSection />
-      <!-- <WhyChooseSection />
-      <TestimonialsSection />
+      <WhyChooseSection />
+      <!-- <TestimonialsSection />
       <FaqSection />
       <DownloadSection /> -->
     </main>
