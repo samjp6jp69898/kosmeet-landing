@@ -42,7 +42,7 @@
 </template>
 
 <script setup lang="ts">
-import OverlapLayout from './OverlapLayout.vue'
+import OverlapLayout from '../components/OverlapLayout.vue'
 </script>
 
 <style scoped>
