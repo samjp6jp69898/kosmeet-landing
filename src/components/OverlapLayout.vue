@@ -141,7 +141,7 @@ const contentContainerClasses = computed(() => [
 }
 
 @media (max-width: 768px) {
-  .overlap-layout {
+  /* .overlap-layout {
     height: auto;
     flex-direction: column;
   }
@@ -165,11 +165,25 @@ const contentContainerClasses = computed(() => [
 
   .layout-subtitle {
     font-size: 1rem;
-  }
+  } */
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
+  .overlap-layout {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .image-container {
+    position: relative;
+    width: 150%;
+  }
+
   .content-container {
+    position: relative;
+    width: 100%;
+    text-align: center !important;
+    justify-content: center;
     padding: 0.5rem;
   }
 
@@ -182,7 +196,7 @@ const contentContainerClasses = computed(() => [
   }
 
   .layout-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }
 </style>

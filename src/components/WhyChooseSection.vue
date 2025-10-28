@@ -28,9 +28,9 @@
         </OverlapLayout>
         <OverlapLayout image="/images/why_choose/phone3.webp" title="戀愛建議提醒" subtitle="" image-position="right"
           layout-class="lg:top-[-60px] md:top-10" image-class="relative lg:left-15 md:left-20 sm:left-25 left-18"
-          text-class="relative lg:left-10 md:left-10 lg:top-[-20px] sm:left-10 top-[-25px]">
+          text-class="relative lg:left-10 md:left-10 lg:top-[-20px] sm:left-10 top-[-25px] text-center lg:text-left md:text-left sm:text-left">
           <template #subtitle>
-            知道你們在意什麼、避開什麼
+              知道你們在意什麼、避開什麼
             <br></br>
             例：火土衝、比肩過多
             <br v-if="!isMobile"></br>
