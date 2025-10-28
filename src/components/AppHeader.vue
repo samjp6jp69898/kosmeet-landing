@@ -144,7 +144,7 @@ const handleResize = () => {
   // Update mobile status when window resizes
   isMobile.value = document.body.classList.contains("is-mobile");
   // Close mobile menu when resizing to desktop
-  if (window.innerWidth >= 768 && isMobileMenuOpen.value) {
+  if (isMobile.value && isMobileMenuOpen.value) {
     isMobileMenuOpen.value = false;
   }
 };
