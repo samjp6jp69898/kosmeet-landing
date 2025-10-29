@@ -5,6 +5,7 @@ import FeaturesSection from "./components/FeaturesSection.vue";
 import WhyChooseSection from "./components/WhyChooseSection.vue";
 import AppFooter from "./components/AppFooter.vue";
 import { useDevice } from "./composables/useDevice";
+import UserReviewSection from "./components/UserReviewSection.vue";
 
 // Initialize device detection
 useDevice();
@@ -20,8 +21,8 @@ useDevice();
       <HeroSection />
       <FeaturesSection />
       <WhyChooseSection />
-      <!-- <TestimonialsSection />
-      <FaqSection />
+      <UserReviewSection />
+      <!-- <FaqSection />
       <DownloadSection /> -->
     </main>
 
