@@ -38,7 +38,7 @@
       <ul
         class="flex flex-col space-y-2 list-disc list-inside items-start justify-start custom-bullets mb-8 text-[#303030] font-bold text-lg"
         style="color: #4B164C;">
-        <li v-for="(problem, index) in $t('features.problems')" :key="index">{{ problem }}</li>
+        <li v-for="(problem, index) in $tm('features.problems')" :key="index">{{ problem }}</li>
       </ul>
 
       <img src="/images/features/phone.webp" alt="App Preview" loading="lazy" class="w-3/4 max-w-sm h-auto object-contain mb-8" />
