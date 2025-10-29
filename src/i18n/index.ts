@@ -31,7 +31,7 @@ const getInitialLanguage = (): string => {
   }
 
   const detectedLanguage = languageMap[browserLanguage] ||
-                          languageMap[browserLanguage.split('-')[0]] ||
+                          languageMap[browserLanguage.split('-')[0] || ''] ||
                           DEFAULT_LANGUAGE
 
   // Save detected language to cookie

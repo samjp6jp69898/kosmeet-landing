@@ -61,9 +61,6 @@
 <script setup lang="ts">
 import CustomButton from "./CustomButton.vue";
 import { onMounted } from 'vue';
-import { useI18n } from 'vue-i18n';
-
-const { t } = useI18n();
 
 // Preload critical hero background image
 onMounted(() => {

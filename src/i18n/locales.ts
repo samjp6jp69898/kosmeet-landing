@@ -15,7 +15,7 @@ export const SUPPORTED_LANGUAGES: LanguageInfo[] = [
 
 export const DEFAULT_LANGUAGE = 'zh_tw'
 
-export const loadLocaleMessages = async (locale: string) => {
+export const loadLocaleMessages = async (locale: string): Promise<any> => {
   try {
     const messages = await fetch(`/locales/${locale}.json`)
     if (!messages.ok) {

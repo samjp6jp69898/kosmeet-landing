@@ -55,7 +55,4 @@
 
 <script setup lang="ts">
 import { AppName } from '../store/constants';
-import { useI18n } from 'vue-i18n';
-
-const { t } = useI18n();
 </script>
