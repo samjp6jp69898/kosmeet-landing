@@ -86,6 +86,12 @@
     },
     "copyright": "© 2024 NAME. All rights reserved."
   },
+  "testimonials": {
+    "title": "用戶好評與故事見證",
+    "subtitle": "聽聽他們如何藉由八字緣分找到真愛",
+    "matchWithGirlfriend": "與女友匹配度",
+    "matchWithBoyfriend": "與男友匹配度"
+  },
   "languageSelector": {
     "title": "選擇語言",
     "footer": "您的語言偏好將會被記住"

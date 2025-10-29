@@ -86,6 +86,12 @@
     },
     "copyright": "© 2024 NAME. All rights reserved."
   },
+  "testimonials": {
+    "title": "사용자 리뷰 및 성공 스토리",
+    "subtitle": "사주 궁합으로 진정한 사랑을 찾은 그들의 이야기를 들어보세요",
+    "matchWithGirlfriend": "여자친구와의 궁합도",
+    "matchWithBoyfriend": "남자친구와의 궁합도"
+  },
   "languageSelector": {
     "title": "언어 선택",
     "footer": "언어 설정이 기억됩니다"

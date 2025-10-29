@@ -86,6 +86,12 @@
     },
     "copyright": "© 2024 NAME. All rights reserved."
   },
+  "testimonials": {
+    "title": "ユーザーレビューと成功体験",
+    "subtitle": "八字の相性で真の愛を見つけた彼らの物語をお聞きください",
+    "matchWithGirlfriend": "彼女との相性度",
+    "matchWithBoyfriend": "彼氏との相性度"
+  },
   "languageSelector": {
     "title": "言語を選択",
     "footer": "言語設定が記憶されます"

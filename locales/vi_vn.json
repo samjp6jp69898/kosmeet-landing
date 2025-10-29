@@ -86,6 +86,12 @@
     },
     "copyright": "© 2024 NAME. Tất cả quyền được bảo lưu."
   },
+  "testimonials": {
+    "title": "Đánh giá người dùng và câu chuyện thành công",
+    "subtitle": "Nghe họ kể về cách tìm được tình yêu đích thực qua tương thích Bát Tự",
+    "matchWithGirlfriend": "Độ tương thích với bạn gái",
+    "matchWithBoyfriend": "Độ tương thích với bạn trai"
+  },
   "languageSelector": {
     "title": "Chọn ngôn ngữ",
     "footer": "Thiết lập ngôn ngữ của bạn sẽ được ghi nhớ"

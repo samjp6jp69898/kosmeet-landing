@@ -86,6 +86,12 @@
     },
     "copyright": "© 2024 NAME. All rights reserved."
   },
+  "testimonials": {
+    "title": "User Reviews & Success Stories",
+    "subtitle": "Hear how they found true love through Ba Zi compatibility",
+    "matchWithGirlfriend": "Compatibility with girlfriend",
+    "matchWithBoyfriend": "Compatibility with boyfriend"
+  },
   "languageSelector": {
     "title": "Select Language",
     "footer": "Your language preference will be remembered"
