@@ -1,0 +1,93 @@
+{
+  "header": {
+    "nav": {
+      "product": "產品",
+      "features": "進階功能",
+      "security": "安全"
+    },
+    "language": "語言",
+    "download": "下載"
+  },
+  "hero": {
+    "title": "讓緣分聽天命",
+    "subtitle": "也靠科學",
+    "description": "結合八字命理 給你最契合的靈魂伴侶",
+    "cta": {
+      "join": "立即加入",
+      "explore": "探索進階功能"
+    },
+    "support": "支援 iOS / Android 系統"
+  },
+  "features": {
+    "title": "你是否也曾...",
+    "problems": {
+      "problem1": "一直配不到對盤的人？",
+      "problem2": "每段戀情都卡在同樣的問題？",
+      "problem3": "不知道怎麼理解對方的情緒與反應？",
+      "problem4": "交往後才發現性格不合，浪費時間？"
+    },
+    "solution": {
+      "title": "我們的解方",
+      "description": "用「八字」＋「MBTI」剖析個性、理解互動模式，幫你找到契合又長久的伴侶關係。"
+    }
+  },
+  "whyChoose": {
+    "title": "為什麼選擇 {appName}？",
+    "items": [
+      {
+        "title": "精準八字排盤系統",
+        "description": "準確採用傳統干支、五行、十神\n確保命盤分析精準無誤"
+      },
+      {
+        "title": "智能配對",
+        "description": "結合命盤結構與MBTI，找出高契合對象融合命理與心理學"
+      },
+      {
+        "title": "戀愛建議提醒",
+        "description": "知道你們在意什麼、避開什麼\n例：火土衝、比肩過多\n減少關係摩擦"
+      },
+      {
+        "title": "命格搜尋",
+        "badge": "付費功能",
+        "description": "找想特定命格的伴侶嗎？\n喜木火的人、財星格局、日主強旺對象...\n設定你想要的五行條件，讓命運不再全靠運氣"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "讓緣分撞天命，科學配對真愛",
+    "sections": {
+      "explore": {
+        "title": "探索",
+        "items": [
+          "首頁功能",
+          "交友功能",
+          "配對系統",
+          "隱私設定"
+        ]
+      },
+      "support": {
+        "title": "支援",
+        "items": [
+          "客服中心",
+          "常見問題",
+          "安全須知",
+          "問題回報"
+        ]
+      },
+      "legal": {
+        "title": "法律聲明",
+        "items": [
+          "隱私政策",
+          "服務條款",
+          "Cookie政策",
+          "社群守則"
+        ]
+      }
+    },
+    "copyright": "© 2024 NAME. All rights reserved."
+  },
+  "languageSelector": {
+    "title": "選擇語言",
+    "footer": "您的語言偏好將會被記住"
+  }
+}

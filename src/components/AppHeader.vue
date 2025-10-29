@@ -3,28 +3,29 @@
     class="fixed top-0 left-0 right-0 z-20 transition-all duration-300 ease-in-out"
     :class="{ 'bg-gradient-to-r from-[#331541] via-[#1f112e] to-[#150f29] backdrop-blur-md shadow-lg': isScrolled || isMobileMenuOpen, 'bg-transparent': !isScrolled }"
   >
-    <nav class="w-[90%] mx-auto">
+    <nav class="w-[94%] mx-auto">
       <div class="flex justify-between items-center w-full" :class="menuPaddingY">
         <!-- Logo and App Name -->
-        <div class="flex items-center space-x-3">
-          <img src="/images/icons/app_icon.webp" alt="NAME App Icon" class="w-20 h-20 object-contain" />
+        <div class="flex items-center lg:space-x-2 md:space-x-1 space-x-1">
+          <img src="/images/icons/app_icon.webp" alt="NAME App Icon" class="lg:w-20 lg:h-20 md:w-16 md:h-16 w-20 h-20 object-contain" />
           <div class="text-3xl font-bold text-primary">{{ AppName }}</div>
 
           <!-- Desktop Navigation -->
-          <div class="hidden md:flex items-center space-x-8 ml-11 text-secondary text-2xl font-medium">
-            <a href="#" class="text-secondary attribute">產品</a>
-            <a href="#" class="text-secondary attribute">進階功能</a>
-            <a href="#" class="text-secondary attribute">安全</a>
+          <div class="hidden md:flex items-center lg:space-x-6 md:space-x-5 space-x-5 lg:ml-8 md:ml-4 text-secondary lg:text-2xl md:text-xl font-medium">
+            <a href="#" class="attribute">{{ $t('header.nav.product') }}</a>
+            <a href="#" class="attribute">{{ $t('header.nav.features') }}</a>
+            <a href="#" class="attribute">{{ $t('header.nav.security') }}</a>
           </div>
         </div>
 
         <!-- Desktop Actions -->
         <div class="hidden md:flex items-center space-x-8">
           <custom-button
-            text="語言"
+            :text="currentBreakPoint === 'lg' ? $t('header.language') : ''"
             backgroundColor="transparent"
             textColor="#E0E0E0"
-            :fontSize="24"
+            fontSize="1.5rem"
+            :onClick="openLanguageSelector"
             class="transition-all duration-300"
           >
             <template #prefix>
@@ -33,8 +34,8 @@
               </svg>
             </template>
           </custom-button>
-          <custom-button text="下載" :width="144" :height="52" :backgroundColor="'#FF87B3'"
-            textColor="#ffffff" :fontSize="24" :onClick="handleButtonClick" radius="99px" />
+          <custom-button :text="$t('header.download')" :width="{lg:144, md:120}" :height="{lg: 52, md: 44}" :backgroundColor="'#FF87B3'"
+            textColor="#ffffff" :fontSize="{lg: '1.5rem', md: '1.2rem'}" :onClick="handleButtonClick" radius="99px" />
         </div>
 
         <!-- Mobile Menu Button -->
@@ -73,7 +74,7 @@
           <!-- Mobile Navigation Links -->
           <div class="space-y-3 text-secondary flex flex-col">
             <custom-button
-              text="產品"
+              :text="$t('header.nav.product')"
               :backgroundColor="'transparent'"
               textColor="#ffffff"
               :fontSize="20"
@@ -81,7 +82,7 @@
               class="mobile-menu-button active:scale-100"
             />
             <custom-button
-              text="進階功能"
+              :text="$t('header.nav.features')"
               :backgroundColor="'transparent'"
               textColor="#ffffff"
               :fontSize="20"
@@ -89,7 +90,7 @@
               class="mobile-menu-button active:scale-100"
             />
             <custom-button
-              text="安全"
+              :text="$t('header.nav.security')"
               :backgroundColor="'transparent'"
               textColor="#ffffff"
               :fontSize="20"
@@ -97,15 +98,16 @@
               class="mobile-menu-button active:scale-100"
             />
             <custom-button
-              text="語言"
+              :text="$t('header.language')"
               backgroundColor="transparent"
               textColor="#ffffff"
               :fontSize="20"
+              :onClick="openLanguageSelector"
               class="mobile-menu-button active:scale-100"
             >
             </custom-button>
             <custom-button
-              text="下載"
+              :text="$t('header.download')"
               :backgroundColor="'transparent'"
               textColor="#ffffff"
               :fontSize="20"
@@ -116,18 +118,27 @@
         </div>
       </div>
     </nav>
+
+    <!-- Language Selector Modal -->
+    <LanguageSelector
+      :isOpen="isLanguageSelectorOpen"
+      @close="closeLanguageSelector"
+    />
   </header>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from "vue";
 import CustomButton from "./CustomButton.vue";
+import LanguageSelector from "./LanguageSelector.vue";
 import { AppName } from "../store/constants";
-const isMobile = ref(false);
+import { useDevice } from "../composables/useDevice";
+const { isMobile, currentBreakPoint } = useDevice();
 const menuPaddingY = computed(() => isMobile.value ? "py-2" : "py-4");
 
 const isScrolled = ref(false);
 const isMobileMenuOpen = ref(false);
+const isLanguageSelectorOpen = ref(false);
 const handleScroll = () => {
   isScrolled.value = window.scrollY > (isMobile.value ? 10 : 100);
   // Close mobile menu when scrolling
@@ -147,14 +158,32 @@ const handleResize = () => {
   if (isMobile.value && isMobileMenuOpen.value) {
     isMobileMenuOpen.value = false;
   }
+
+  // handle resize 中辨別目前螢幕尺寸
+  if (window.innerWidth < 1024) {
+    currentBreakPoint.value = 'md'
+  } else if (window.innerWidth < 768) {
+    currentBreakPoint.value = 'sm'
+  } else if (window.innerWidth < 480) {
+    currentBreakPoint.value = 'xs'
+  } else {
+    currentBreakPoint.value = 'lg'
+  }
 };
 
 const handleButtonClick = () => {
   console.log("Download button clicked");
 };
 
+const openLanguageSelector = () => {
+  isLanguageSelectorOpen.value = true;
+};
+
+const closeLanguageSelector = () => {
+  isLanguageSelectorOpen.value = false;
+};
+
 onMounted(() => {
-  isMobile.value = document.body.classList.contains("is-mobile");
   window.addEventListener("scroll", handleScroll);
   window.addEventListener("resize", handleResize);
 });

@@ -1,5 +1,5 @@
 <template>
-  <div class="overlap-layout lg:w-[90%] md:w-[92%] sm:w-[95%] w-[98%] lg:h-125 md:h-105 sm:h-90 lg:px-4 md:px-3 sm:px-2 px-2" :class="layoutClasses">
+  <div class="overlap-layout lg:w-[90%] md:w-[92%] sm:w-[95%] w-[98%] lg:h-116 md:h-105 sm:h-90 lg:px-4 md:px-3 sm:px-2 px-2" :class="layoutClasses">
     <div class="image-container" :class="imageContainerClasses">
       <img
         :src="image"
