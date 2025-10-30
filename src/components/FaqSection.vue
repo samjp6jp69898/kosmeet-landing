@@ -5,7 +5,7 @@
         <h2 class="text-5xl lg:text-5xl font-bold text-purple">{{ $t('faq.title') }}</h2>
       </div>
 
-      <div class="grid grid-cols-2 gap-10">
+      <div class="grid grid-cols-2 gap-10 items-center justify-items-center">
         <FaqCard
           v-for="(item) in faqList"
           :key="item.id"
