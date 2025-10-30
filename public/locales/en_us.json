@@ -95,5 +95,13 @@
   "languageSelector": {
     "title": "Select Language",
     "footer": "Your language preference will be remembered"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions"
+  },
+  "download": {
+    "title": "Destined Encounters Start Now",
+    "subtitle": "Become an Early Adopter",
+    "description": "Get one month of premium membership and exclusive one-on-one consultation"
   }
 }

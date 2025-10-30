@@ -2,10 +2,10 @@
   <section class="py-20 bg-[#FFF0F0]">
     <div class="w-full mx-auto">
       <div class="text-center mb-16">
-        <h2 class="text-6xl lg:text-6xl font-bold text-purple">
+        <h2 class="text-5xl lg:text-5xl font-bold text-purple">
           {{ $t('testimonials.title') }}
         </h2>
-        <p class="text-tertiary text-3xl mt-4">{{ $t('testimonials.subtitle') }}</p>
+        <p class="text-tertiary text-2xl mt-4">{{ $t('testimonials.subtitle') }}</p>
       </div>
 
       <div class="flex w-full items-center justify-center space-x-6">

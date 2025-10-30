@@ -95,5 +95,13 @@
   "languageSelector": {
     "title": "언어 선택",
     "footer": "언어 설정이 기억됩니다"
+  },
+  "faq": {
+    "title": "자주 묻는 질문"
+  },
+  "download": {
+    "title": "운명적인 만남 지금 시작",
+    "subtitle": "초기 사용자가 되세요",
+    "description": "1개월 프리미엄 멤버십과 전용 1:1 상담 기회를 얻으세요"
   }
 }
