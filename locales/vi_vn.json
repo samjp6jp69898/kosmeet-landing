@@ -95,5 +95,13 @@
   "languageSelector": {
     "title": "Chọn ngôn ngữ",
     "footer": "Thiết lập ngôn ngữ của bạn sẽ được ghi nhớ"
+  },
+  "faq": {
+    "title": "Câu hỏi thường gặp"
+  },
+  "download": {
+    "title": "Cuộc gặp gỡ số phận bắt đầu từ bây giờ",
+    "subtitle": "Trở thành người dùng sớm",
+    "description": "Nhận một tháng thành viên cao cấp và cơ hội tư vấn 1-1 riêng biệt"
   }
 }

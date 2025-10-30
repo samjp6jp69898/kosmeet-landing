@@ -95,5 +95,13 @@
   "languageSelector": {
     "title": "選擇語言",
     "footer": "您的語言偏好將會被記住"
+  },
+  "faq": {
+    "title": "常見問題"
+  },
+  "download": {
+    "title": "命中注定的相遇 從現在開始",
+    "subtitle": "成為首批體驗者",
+    "description": "獲得一個月高級會員資格與專屬一對一諮詢機會"
   }
 }
